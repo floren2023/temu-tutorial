@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/sonner"
 import Navbar from "./components/Navbar";
 import { auth } from "../lib/auth";
 import { headers } from "next/headers";
+import Footer from "./components/Footer"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,14 +29,15 @@ export default async function RootLayout({
 }>) {
   const session = await auth.api.getSession({ headers: await headers() });
   return (
-    <html lang="en">
+    <html lang="en" className="!scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} bg-gradient-to-t from-amber-100 via-gray-100 to-orange-50`}
       >
-        <Navbar session={session}/>
-        <div className=" flex flex-col min-h-screen mx-auto  ml-20 mr-20">
+        <Navbar session={session} />
+        <div className=" flex flex-col min-h-screen mx-auto  ml-20 mr-20 z-0">
         {children}
         </div>
+        <Footer/>
         <Toaster/>
       </body>
     </html>
