@@ -1,5 +1,6 @@
 "use client";
 
+
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -11,10 +12,10 @@ import {
   FormLabel,
   FormControl,
   FormMessage,
-} from "@/app/components/ui/form";
-import { Input } from "@/app/components/ui/input";
-import { Button } from "@/app/components/ui/button";
-import { Card, CardContent } from "@/app/components/ui/card";
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
 import { toast } from "sonner";
 import { useState } from "react";
@@ -120,7 +121,7 @@ export default function SignInForm() {
           <GoogleAuthButton action="signin"
            buttonText="SignIn with Google" redirectTo="/dashboard"/>
         
-       
+        
         </div>
       </CardContent>
     </Card>

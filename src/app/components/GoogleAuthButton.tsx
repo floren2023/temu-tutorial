@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
-import { authClient } from "../../../lib/auth-client";
+import { authClient } from "../../lib/auth-client";
 
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
+
 
 interface GoogleAuthButtonProps {
   action: "signin" | "signup";

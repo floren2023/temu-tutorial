@@ -1,6 +1,6 @@
 
 "use client"
-import { SignOut} from "../../../lib/auth-client"
+import { SignOut} from "../../lib/auth-client"
 import { useState } from "react"
 import LoadingButton from "./LoadingButton"
 import {useRouter} from "next/navigation"

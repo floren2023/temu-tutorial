@@ -11,10 +11,10 @@ import {
   FormLabel,
   FormControl,
   FormMessage,
-} from "@/app/components/ui/form";
-import { Input } from "@/app/components/ui/input";
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 
-import { Card, CardContent } from "@/app/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 
 import LoadingButton from "./LoadingButton";
 import Link from "next/link";
@@ -22,7 +22,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import GoogleAuthButton from "./GoogleAuthButton";
-import { authClient } from "../../../lib/auth-client";
+import { authClient } from "../../lib/auth-client";
 
 const signUpSchema = z
   .object({
