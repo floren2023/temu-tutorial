@@ -3,10 +3,12 @@ import React from 'react'
 
 function LoadingButton({
     pending,
+    
     children,
     onClick
 }:{
     pending:boolean,
+    
     children:React.ReactNode,
     onClick?:()=>void
 }) {
@@ -15,13 +17,14 @@ function LoadingButton({
     onClick={onClick}
     type="submit"
     disabled={pending}
-    className="w-full">
+     className='bg-orange-700 rounded-full text-white flex items-center justify-center w-full hover:bg-gray-200 hover:text-orange-600'>
 
    {pending ? (
-     <div  className='bg-indigo-700 text-white flex items-center justify-center'>
+     <div  className='bg-orange-700 text-white flex items-center justify-center'>
 
        
-<svg xmlns="http://www.w3.org/2000/svg" id="Isolation_Mode" data-name="Isolation Mode" className='text-white mr-2 animate-spin '
+<svg xmlns="http://www.w3.org/2000/svg" id="Isolation_Mode" data-name="Isolation Mode"
+ className='text-white mr-2 animate-spin '
  viewBox="0 0 24 24" width="6" height="6">
     <path d="M.415,12.051a12,12,0,0,1,23.17-4.364L20.791,8.779a9,9,0,1,0,0,6.545l2.794,1.092A12,12,0,0,1,.415,12.051Z"/></svg>
 
@@ -30,7 +33,7 @@ function LoadingButton({
      </div>
 
    ):(
-    <div>
+    <div >
        {children}
     </div>
 

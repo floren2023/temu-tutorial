@@ -1,19 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
-import { Toaster } from "@/components/ui/sonner"
+import { Toaster } from "@/components/ui/sonner";
 import Navbar from "./components/Navbar";
 import { auth } from "../lib/auth";
 import { headers } from "next/headers";
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
@@ -29,16 +24,17 @@ export default async function RootLayout({
 }>) {
   const session = await auth.api.getSession({ headers: await headers() });
   return (
-    <html lang="en" className="!scroll-smooth">
+    <html lang="en">
       <body
         className={`${geistSans.variable} bg-gradient-to-t from-amber-100 via-gray-100 to-orange-50`}
       >
         <Navbar session={session} />
-        <div className=" flex flex-col min-h-screen mx-auto  ml-20 mr-20 z-0">
-        {children}
-        </div>
-        <Footer/>
-        <Toaster/>
+        <div className=" flex flex-col gap-10 ml-10 mr-10 ">
+          {children}
+          </div>
+
+        <Footer />
+        <Toaster />
       </body>
     </html>
   );

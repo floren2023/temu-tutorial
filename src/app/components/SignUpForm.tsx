@@ -22,7 +22,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import GoogleAuthButton from "./GoogleAuthButton";
-import { authClient } from "../../lib/auth-client";
+import { authClient } from "@/lib/auth-client";
 
 const signUpSchema = z
   .object({
@@ -91,7 +91,11 @@ export default function SignUpForm() {
   return (
     <Card className="w-full max-w-md mx-auto  p-6">
       <CardContent>
-        <h2 className="text-2xl font-semibold mb-4">Create Account</h2>
+        
+       <h2 className="text-2xl text-center pt-4"> Sign Up with <span className="text-orange-600">SHOPAPP</span></h2>
+               <div className="text-md text-center py-4 mb-6 text-orange-400">
+                  Sign up and get 90% off for the first order
+               </div>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 mb-5">
             <FormField
@@ -154,7 +158,7 @@ export default function SignUpForm() {
           <GoogleAuthButton action="signup"
            buttonText="SignUp with Google" redirectTo="/dashboard"/>
         
-        <Link href="/sign-in" className="flex items-center justify-center text-center text-sm text-violet-700">
+        <Link href="/sign-in" className="flex items-center justify-center text-center text-sm text-orange-700">
           You already have an account? <span className="text-sm text-red-700 pl-2">Click here</span>
         </Link>
         </div>

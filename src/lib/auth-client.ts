@@ -14,11 +14,7 @@ export const SignOut=async()=>{
   
 });
 }
-const signInGoogle = async () => {
-    const data = await authClient.signIn.social({
-        provider: "google"
-    })
-}
+
 
 export const {
   signIn,

@@ -12,8 +12,8 @@ function NavLink({ href, title }:{href:string , title:string}) {
       href={href}
       className={
         pathname === href
-          ? "text-md  cursor-pointer  text-amber-700 duration-200 ease-in-out"
-          : "text-gray-400 text-md   hover:text-amber-700 hover:bg-gray-200 rounded-full pt-1 pb-2 px-3 hover:border-1 hover:border-gray-400 cursor-pointer duration-300 ease-in-out"
+          ? "text-sm md:px-2 lg:px-6 py-2 cursor-pointer font-medium duration-200 ease-in-out  tranzition-all rounded-full bg-orange-600 text-white "
+          : "text-black text-sm font-medium  hover:text-orange-700 hover:bg-gray-200 rounded-full md:px-2 lg:px-6 py-2 border-1 hover:border-gray-400 cursor-pointer duration-200 ease-in-out"
       }
     >
       {" "}

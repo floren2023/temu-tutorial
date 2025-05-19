@@ -21,8 +21,8 @@ function MenuOverlay({ links }:{links:linkNav[]}) {
     initial={{opacity:0, y:-100}}
     transition={{duration:0.5}}
       className=" lg:hidden    md:flex md:flex-col sm:flex sm:flex-col w-[250px]
-         items-center  fixed top-40   right-4 mx-auto z-50  bg-gray-700 
-          rounded-md  shadow3"
+         items-center  fixed top-20  right-4 mx-auto z-50  bg-gray-300 
+          rounded-md  "
     >
       {links.map((link, index) => (
         <li
@@ -36,8 +36,8 @@ function MenuOverlay({ links }:{links:linkNav[]}) {
                     <div 
             className={
               pathname ===link.href
-                ? "text-md  cursor-pointer bg-gray-200 text-gray-400  uppercase py-10 w-full duration-300 ease-in-out"
-                : "text-gray-300 text-md   hover:text-gray-600 hover:bg-gray-300 cursor-pointer duration-300 ease-in-out hover:ease-[cubic-bezier(0.95,0.05,0.795,0.035)] uppercase py-10 w-full"
+                ? "text-md  cursor-pointer bg-gray-200 text-orange-400  uppercase py-10 w-full duration-300 ease-in-out"
+                : "text-gray-500 text-md   hover:text-orange-600 hover:bg-gray-200 cursor-pointer duration-300 ease-in-out hover:ease-[cubic-bezier(0.95,0.05,0.795,0.035)] uppercase py-10 w-full"
             }
           >
             {" "}

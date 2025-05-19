@@ -1,5 +1,5 @@
 "use client";
-import { SignOut } from "../../lib/auth-client";
+import { SignOut } from "@/lib/auth-client";
 import { useState } from "react";
 import LoadingButton from "./LoadingButton";
 import { useRouter } from "next/navigation";
@@ -18,8 +18,8 @@ export default function SignOutButton() {
 
   return (
     <div>
-      {/* <Button onClick={()=>authClient.signOut()}>Sign Out</Button> */}
-      <LoadingButton pending={false} onClick={handleSignOut}>
+    
+      <LoadingButton pending={pending}  onClick={handleSignOut}>
         Sign Out
       </LoadingButton>
     </div>

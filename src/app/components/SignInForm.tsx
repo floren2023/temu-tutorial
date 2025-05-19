@@ -4,7 +4,7 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { SignIn } from "../../../server/users";
+
 import {
   Form,
   FormField,
@@ -14,16 +14,17 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+
 import { Card, CardContent } from "@/components/ui/card";
 
 import { toast } from "sonner";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
+
 import GoogleAuthButton from "./GoogleAuthButton";
 import LoadingButton from "./LoadingButton";
-import { authClient } from "../../lib/auth-client";
+import { authClient } from "@/lib/auth-client";
+import Link from "next/link";
 
 
 const signInSchema = z.object({
@@ -34,10 +35,7 @@ const signInSchema = z.object({
 });
 
 type SignInFormValues = z.infer<typeof signInSchema>;
-type FormData = {
-  email: string;
-  password: string;
-};
+
 
 export default function SignInForm() {
   
@@ -67,6 +65,7 @@ export default function SignInForm() {
         },
         onSuccess: () => {
           router.push("/dashboard");
+          router.refresh()
         },
         onError: (ctx) => {
           console.log("error", ctx);
@@ -81,9 +80,9 @@ export default function SignInForm() {
   return (
     <Card className="w-full max-w-md mx-auto  p-6">
       <CardContent>
-        <h2 className="text-2xl font-semibold mb-4">Sign In</h2>
+        <h2 className="text-2xl font-semibold  text-center py-6">SignIn with <span className="text-orange-600">SHOPAPP</span></h2>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 mb-10">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 mb-10">
             <FormField
               control={form.control}
               name="email"
@@ -111,7 +110,10 @@ export default function SignInForm() {
                 </FormItem>
               )}
             />
-            <LoadingButton pending={pending}>Sign In</LoadingButton>
+            <div className="mt-6">
+                <LoadingButton pending={pending} >Sign In</LoadingButton>
+            </div>
+           
             
           </form>
         </Form>
@@ -122,6 +124,9 @@ export default function SignInForm() {
            buttonText="SignIn with Google" redirectTo="/dashboard"/>
         
         
+        </div>
+        <div className="items-center text-sm text-red-600 mt-4 mb-4">
+         <Link href="/sign-up">You don't have an account?  </Link> 
         </div>
       </CardContent>
     </Card>
